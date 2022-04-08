@@ -1,0 +1,228 @@
+SELECT * FROM SUPPLIERS
+WHERE STATE = 'GEORGIA'
+OR STATE = 'CALIFORNIA';
+
+SELECT * FROM SUPPLIERS 
+WHERE SUPPLIER NAME LIKE '%WO%'
+AND SUPPLIER NAME LIEK %I%
+OR SUPPLIER NAME %i%
+
+
+
+--CREATE TABLE
+CREATE TABLE users (
+id int AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+phone int,
+address VARCHAR(100),
+class VARCHAR(50),
+remarks VARCHAR(500) 
+);
+
+
+-- INSERT DATA IN SIDE TABLE
+
+INSERT INTO users(NAME, PHONE) VALUES( 'SIVA' , 911);
+INSERT INTO users(name, phone) VALUES ('Munu Shahi', 8237283);
+INSERT INTO users(name, phone) VALUES ('Prity Shrestha', 4894839);
+INSERT INTO users(name, phone) VALUES ('Anup Shrestha', 89889);
+INSERT INTO users(name, phone) VALUES ('Dipika', 89889222);
+INSERT INTO users(name, phone) VALUES ('Rachana', 445589889);
+INSERT INTO users(name, phone) VALUES ('Ram Adhikari', 834844);
+INSERT INTO users(name, phone) VALUES ('Rama Aryal', 43544);
+INSERT INTO users(name, phone) VALUES ('Ravina Kunwar', 393384943);
+INSERT INTO users(name, phone) VALUES ('Sagar Ghimire', 448489889);
+INSERT INTO users(name, phone) VALUES ('Saraswati Khatri', 4839393);
+INSERT INTO users(name, phone) VALUES ('Shradha Shrestha', 8339889);
+INSERT INTO users(name, phone) VALUES ('Shreya', 873837);
+INSERT INTO users(name, phone) VALUES ('Sivasakthi Kandaswamy', 34489889);
+INSERT INTO users(name, phone) VALUES ('Subash', 2554566);
+INSERT INTO users(name, phone) VALUES ('Yugesh G', 8489889);
+
+
+--
+CREATE TABLE users (
+id int AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+phone VARCHAR(15), 
+address VARCHAR(100)
+);
+
+--TO SELECT 
+
+SELECT * FROM `users` WHERE id =1
+
+SELECT * FROM qaclass WHERE address="JAS" OR  address= "mountain"
+SELECT * FROM qaclass WHERE address in("jas","mountain)
+
+-- step 1
+
+CREATE DATABASE emp_info;
+
+-- Step 2
+
+CREATE TABLE staff (
+id int AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+phone int,
+description VARCHAR(100)
+);
+
+
+-- to add new column
+ALTER TABLE staff ADD COLUMN salary float;
+
+-- update data
+UPDATE staff SET salary = 1000 where id =2
+
+- total data find
+SELECT * FROM `staff` WHERE 1
+
+-- average 
+SELECT avg(age) `staff` WHERE 
+
+AVERAGE
+SELECT AVG(salary) FROM `staff` WHERE ' USA';
+
+
+
+///////////////////Day 2
+
+
+
+1. Create Database "office"
+Command: CREATE DATABASE office;
+
+2. Create Table staff
+Command: CREATE TABLE staff (
+id int AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+address VARCHAR(100),
+age int,
+phoneno VARCHAR(15)
+)
+
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Sagar Ghimire', 'USA', '30', '498498494');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Yugesh G', 'USA', '21', '255555544');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Prity Shrestha', 'USA', '23', '3434335454');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Anup Sharestha', 'USA', '34', '434343');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Anar Singh Basnet', 'USA', '22', '4934348498494');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Dipika Khadgi', 'USA', '40', '343343');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Munu Shahi', 'USA', '20', '4984398494');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Sivasakthi Kandaswamy', 'USA', '31', '49568498494');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Shreya', 'USA', '33', '545454');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Subash', 'USA', '22', '459844598494');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Rama Aryal', 'USA', '30', '677498498494');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Himesh Sharma', 'Nepal', '45', '98783837383');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Sabita Bk', 'Nepal', '31', '32343433');
+INSERT INTO `staff` ( `name`, `address`, `age`, `phoneno`) VALUES ( 'Raj Sharma', 'India', '70', '278455');
+
+To Add New Column
+Syntax:
+ALTER TABLE <TableName> ADD COLUMN <Colunmname> Datatype;
+ALTER TABLE staff ADD COLUMN salary float;
+
+DELETE COLUMN
+ALTER TABLE <TableName> DROP COLUMN <ColumnName>;
+ALTER TABLE staff DROP column salary;
+
+
+To Update Data
+Syntax:
+UPDATE <TableName> SET colname=value, colname2 = value..... WHERE condition
+UPDATE staff SET salary = 20000 where address='USA';
+
+
+Total Data Find
+SELECT COUNT(*) FROM staff;
+
+To Find Avg
+SELECT AVG(age) FROM staff;
+
+To Find Max
+SELECT MAX(age) FROM staff;
+
+To Find MIN
+SELECT MIN(age) FROM staff;
+
+SELECT * FROM `staff` WHERE age>=25 and address = 'USA';
+DELETE FROM staff WHERE id =15;
+
+SELECT AVG(age), address FROM staff GROUP BY address;
+SELECT * FROM staff ORDER BY name DESC;
+SELECT * FROM staff ORDER BY name ASC;
+
+
+//////////////////////Day 3
+
+
+Todays Note:
+Restaurant
+- staff [id, name, address, phone, salary, jobdesc]
+- fooditem [id, name, price, desc]
+- customer [id, name, phone]
+- order [id, customerid, ooditemid, qty, totalamount]
+
+To Create Database
+- CREATE DATABASE restaurant;
+
+To Create Table staff
+- CREATE TABLE staff(
+id int AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+address VARCHAR(100),
+phone VARCHAR(15),
+salary float,
+jobdesc Text
+);
+
+
+
+SELECT address, AVG(salary) FROM staff GROUP BY address;
+
+Null is different from space or 0 value.
+Null means with no value.
+
+Empty means ""
+
+Note: You can't use =, <, > in null values, we use IS NULL or IS NOT NULL
+FOR THAT
+
+LIKE
+- It is used to search for data.
+'a%' - Find value that start with a
+'%a' - Find value that end with a
+'%ma%' - Find value that have "ma" in any position.
+'_____a' - Find value that have a in 6th positon.
+'a_%' - Find values that start with a and have atleast 2 characters in length.
+'h%a' - Find any value that start with h and end with a
+E.g: SELECT * FROM staff WHERE name LIKE 'a%'
+
+
+data structure///////////////////////////
+
+
+from Bishworaj's QA Class to everyone:    8:24 AM
+
+CREATE TABLE users(
+id int AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(25),
+password VARCHAR(100),
+phone VARCHAR(15),
+gender enum('M','F','O')
+);
+CREATE TABLE posts(
+id int AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(200),
+description Text,
+userid int,
+FOREIGN KEY(userid) REFERENCES users(id)
+);
+CREATE TABLE comments (
+id int AUTO_INCREMENT PRIMARY KEY,
+comment VARCHAR(200),
+userid int,
+postid int,
+FOREIGN KEY(userid) REFERENCES users(id),
+FOREIGN KEY(postid) REFERENCES posts(id)
+);

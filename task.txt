@@ -1,0 +1,12 @@
+-- step 1
+
+CREATE DATABASE emp_info;
+
+-- Step 2
+
+CREATE TABLE staff (
+id int AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+phone int,
+description VARCHAR(100)
+);
